@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `user_info` AS select `u`.`id_account` AS `id`,concat(`p`.`firstname`,' ',`p`.`lastname`) AS `name`,`u`.`email` AS `email`,`p`.`gender` AS `gender`,`p`.`birthday` AS `birthday`,`p`.`address` AS `address` from (`users` `u` join `client_profile` `p` on((`p`.`users_id_account` = `u`.`id_account`)))
